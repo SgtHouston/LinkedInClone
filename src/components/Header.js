@@ -5,9 +5,11 @@ import HeaderOption from './HeaderOption';
 import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter'; 
-import ChatIcon from '@material-ui/icons/Chat';
+import SmsIcon from '@material-ui/icons/Sms';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Chris from "../images/Avatar.png"
+import AppsIcon from '@material-ui/icons/Apps';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
 
 function Header() {
     return (
@@ -23,9 +25,11 @@ function Header() {
                 <HeaderOption Icon={HomeIcon} title="Home" />
                 <HeaderOption Icon={SupervisorAccountIcon} title="My Network"/>
                 <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
-                <HeaderOption Icon={ChatIcon} title="Messaging"/>
+                <HeaderOption Icon={SmsIcon} title="Messaging"/>
                 <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
                 <HeaderOption avatar={Chris} title="Me" />
+                <HeaderOption Icon={AppsIcon} title="Work" />
+                <HeaderOption Icon={LiveTvIcon} title="Learning" />
             </div>
                 
                 
