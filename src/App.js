@@ -10,9 +10,7 @@ function App() {
     <div className="app">
       {/* Header */}
       <Header />
-      <br/>
-      <h4 className="ad"><a href="https://digitalcrafts.com">Web Development 100% Online - </a><a className="adblack" href="https://digitalcrafts.com" >Launch your career in development @DigitalCrafts bootcamp.  No degree required</a></h4>
-      <br/>
+      
 
       {/* App Body */}
       <div className="app__body" >
