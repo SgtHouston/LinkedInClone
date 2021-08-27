@@ -7,4 +7,9 @@
 
 .app__body {
     display: flex;
+    width: 97%;
+    justify-content: space-evenly;
+    
 }
+
+.adblack { color: black;}

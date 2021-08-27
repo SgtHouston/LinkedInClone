@@ -2,15 +2,20 @@
     position: sticky;
     top: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-bottom: 0.1 solid lightgray;
     padding-top: 2vh;
     width: 100%;
     z-index: 999;
+    
 }
 
 .header__left {
     display: flex;
+    margin-left:2vw;
+    flex: .42
+    
+    
 }
 
 .header__left > img {
@@ -39,5 +44,9 @@
 
 .header__right {
     display: flex; 
+    margin-right:2vw;
+    flex: 0.58;
+    justify-content: space-evenly;
+    
 
 }
