@@ -1,6 +1,5 @@
 import React from 'react'
 import '../componentcss/Feed.css'
-import CreateIcon from '@material-ui/icons/Create';
 import InputOption from './InputOption';
 import ImageIcon from '@material-ui/icons/Image';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
@@ -13,15 +12,15 @@ function Feed() {
     return (
         <div className="feed">
             <div className="feed__inputContainer">
-            <div className="feed__inputContainertop">
-                <Avatar avatar={Avatar} />
-                <div className="feed__input">
-                    <form >
-                        <input type="text" />
-                        <button type="submit"> Send</button>
-                    </form>
+                <div className="feed__inputContainertop">
+                    <Avatar avatar={Avatar} />
+                    <div className="feed__input">
+                        <form >
+                            <input type="text" placeholder="Start a post"/>
+                            <button type="submit"> Send</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
                 <div className="feed__inputOptions">
                     {/* Input Options */}
                     <InputOption  Icon={ImageIcon} title="Photo" color="70B5F9"/>
@@ -30,6 +29,7 @@ function Feed() {
                     <InputOption  Icon={FormatIcon} title="Write Article" color="#F97C83"/>   
                 </div>
             </div>
+            <div style={{ borderTop: "2px solid lightgray", marginLeft: 20, marginRight: 20 }}></div>
         </div>  
     )
 }
