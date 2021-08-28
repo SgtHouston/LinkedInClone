@@ -1,16 +1,20 @@
 .widgets {
+    top: 80px;
     flex: 0.4 ;
     display: flex;
-    position: sticky;
     top: 80px;
     border-radius: 10px;
-    text-align: center;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center; 
     border: 1px solid lightgray;
     background-color: white;
     padding-bottom: 10px;
     
+    
+}
+
+.widget__top {
+    padding-left: 10px;
+    padding-top: 5px;
 }

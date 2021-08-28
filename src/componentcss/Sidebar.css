@@ -1,5 +1,4 @@
 .sidebar {
-    position: sticky;
     top: 80px;
     flex: 0.3;
     border-radius: 10px;
@@ -100,8 +99,6 @@
     color: gray;
     font-weight: bolder;
     cursor: pointer;
-    margin-bottom: 5px;
-    padding: 5px;
 }
 
 .sidebar__recentItem:hover {
@@ -121,6 +118,11 @@
 .sidebar__bottom > p {
     font-size: 13px;
     padding-bottom: 10px;
+}
+
+.sidebar__groups{
+    color: #0E4FB4;
+    font-weight: bolder;
 }
 
 .spacerdiv{
