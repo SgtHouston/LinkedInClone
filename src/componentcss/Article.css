@@ -1,0 +1,44 @@
+.article {
+    font-size: 13px;
+    font-size: 13px;
+    display: flex;
+}
+
+.article__left {
+    font-weight: 900;
+    justify-content: center;
+    flex: .1;
+}
+
+.article__right {
+    flex: .9;
+}
+.article:hover{
+    background-color:rgba(245, 245, 245, 0.5);
+    
+}
+
+.article__top {
+    display: flex;
+}
+
+.article__title {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    
+}
+
+.article__title:hover{
+    color: black;
+}
+
+.article__bottom {
+    display:flex;
+    align-items: center;
+}
+
+.article__counter {
+    padding-left: 5px;
+}

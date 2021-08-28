@@ -14,6 +14,7 @@ function Feed() {
             <div className="feed__inputContainer">
                 <div className="feed__inputContainertop">
                     <Avatar avatar={Avatar} />
+                    
                     <div className="feed__input">
                         <form >
                             <input type="text" placeholder="Start a post"/>
@@ -35,3 +36,6 @@ function Feed() {
 }
 
 export default Feed
+
+
+
