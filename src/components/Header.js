@@ -13,13 +13,12 @@ import LiveTvIcon from '@material-ui/icons/LiveTv';
 
 function Header() {
     return (
-        <div className="header__main">
             <div className="header">
                 <div className="header__left">
                     <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" alt=""></img>
                     <div className="header__search">
                         <SearchIcon/>
-                        <input type="text"/>
+                        <input type="text" placeholder="Search"/>
                     </div>
                 </div> 
                 <div className="header__right">
@@ -33,12 +32,6 @@ function Header() {
                     <HeaderOption Icon={LiveTvIcon} title="Learning" />
                 </div>
             </div>
-            <div className="header__bottom">
-                <br/>
-                <h4 className="ad"><a href="https://digitalcrafts.com">Web Development 100% Online - </a><a className="adblack" href="https://digitalcrafts.com" >Launch your career in development @DigitalCrafts bootcamp.  No degree required</a></h4>
-                <br/>
-            </div>
-        </div>
     )
 }
 

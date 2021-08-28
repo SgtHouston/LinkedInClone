@@ -6,26 +6,30 @@ import RecentItem from './RecentItem';
 
 
 
+
 function Sidebar() {
 
     return (
         <div classname="sidebar">
             <div className="sidebar__top" >
-                <img src={background } alt="" /> 
+                <img src={ background } alt=""/> 
                 <Avatar className="sidebar__avatar" />
                 <h2 className="sidebar__info">Chris Houston</h2>
-                <h4 className="sidebar__info">Chris.Houston314@gmail.com</h4>
+                <h4 className="sidebar__info">chris.houston314@gmail.com</h4>
             </div>
             <div className="sidebar__stats" >
                 <div className ="sidebar__stat">
                     <p>Who viewed your profile </p>
+                    <div className="spacerdiv"></div>
                     <p className="sidebar__statNumber" > 2,061 </p>
                 </div>
                 <div className="sidebar__stat" >
                     <p>Views of you post</p>
+                    <div className="spacerdiv"></div>
                     <p className="sidebar__statNumber" >1,342</p>
                 </div>
-                <div className="sidebar__bottom">
+            </div>
+            <div className="sidebar__bottom">
                     <p>Recent</p>
                     <RecentItem topic='React' />
                     <RecentItem topic='Redux' />
@@ -37,7 +41,6 @@ function Sidebar() {
                     <RecentItem topic='Web Development' />
                     <RecentItem topic='Frontend Developer' />
                     
-                </div>
             </div>
             
         </div>
