@@ -6,19 +6,45 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventIcon from '@material-ui/icons/Event';
 import FormatIcon from '@material-ui/icons/FormatIndentIncrease';
 import { Avatar } from "@material-ui/core";
+import Post from './Post';
+import { useEffect, useState } from 'react';
+import db from "../firebase"
+// import { doc, setDoc, updateDoc } from "firebase/firestore";
+import avatar from "../images/Avatar.png"
+
 
 
 function Feed() {
+    const [posts, setPosts] = useState([]);
+    const [input, setInput] = useState('');
+
+    // 
+    
+
+    const postMessage = e => {
+        e.preventDefault();
+        // Take post and add it to the db
+        // ({
+        //     name: 'Chris H',
+        //     description: 'this is a test',
+        //     message: "Cool post message",
+        //     photoUrl: '',
+        //     timestamp: new Date() 
+        // })
+
+    }
+
+
+
     return (
         <div className="feed">
             <div className="feed__inputContainer">
                 <div className="feed__inputContainertop">
                     <Avatar avatar={Avatar} />
-                    
                     <div className="feed__input">
                         <form >
-                            <input type="text" placeholder="Start a post"/>
-                            <button type="submit"> Send</button>
+                            <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Start a post"/>
+                            <button onClick={postMessage}  type="submit"> Send</button>
                         </form>
                     </div>
                 </div>
@@ -31,7 +57,25 @@ function Feed() {
                 </div>
             </div>
             <div style={{ borderTop: "2px solid lightgray", marginLeft: 20, marginRight: 20 }}></div>
+            <br/ >
+            <div className="mainfeed">
+                
+                {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+                    <Post 
+                        key = {id} 
+                        name = {name}
+                        description = {description}
+                        message ={message}
+                        photoUrl = {photoUrl}
+                        />
+                ))}
+                
+                <Post key={1} name={"Chris Houston"} description={"Software Developer"} message="Wow, this is such a cool site!  I can't wait to build more projects like this" photoUrl={avatar}/> 
+                
+            </div>
+            
         </div>  
+        
     )
 }
 

@@ -6,7 +6,7 @@ import Feed from './components/Feed';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Widgets from './components/Widgets';
-import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+// import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 function App() {
   return (
