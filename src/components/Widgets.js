@@ -14,7 +14,7 @@ export default function Widgets() {
                 <a className="widget__img" href="https://developer.nytimes.com/"><img src={NYT} alt="New York Times Logo and Attribute"></img></a>
             </div>
             <br/>
-            <div className="widget__bottom text-muted">
+            <div className="widget__bottom">
                 <ArticleList/>
             </div>
 

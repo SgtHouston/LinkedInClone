@@ -70,7 +70,12 @@ function Feed() {
                         />
                 ))}
                 
-                <Post key={1} name={"Chris Houston"} description={"Software Developer"} message="Wow, this is such a cool site!  I can't wait to build more projects like this" photoUrl={avatar}/> 
+                <Post key={1} name={"Chris Houston"} description={"Software Developer"} message="Wow, I can't wait to build more projects like this!" photoUrl={avatar}/> 
+                <Post key={2} name={"Billy Bob"} description={"Backend Engineer"} message="The name's Billy Bob and I need a job..." photoUrl={avatar}/>
+                <Post key={3} name={"Elon Musky"} description={"Billionaire"} message="Buy Doge and self-drive to the moon!" photoUrl={avatar}/>
+                <Post key={4} name={"Linked Ingram"} description={"Tech Recruiter"} message="Now hiring entry-level developers!  Masters degree in a STEM field and minimum 6 years Java or C# experience required." photoUrl={avatar}/>
+                <Post key={4} name={"Johnny Appleseed"} description={"LinkedIn Superstar"} message="I sure do love networking!" photoUrl={avatar}/>
+
                 
             </div>
             

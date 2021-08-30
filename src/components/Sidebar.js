@@ -3,6 +3,10 @@ import { Avatar } from "@material-ui/core";
 import "../componentcss/Sidebar.css"
 import background from "../images/Background.jpg"
 import RecentItem from './RecentItem';
+import TechArticleList from './TechArticles';
+import "../componentcss/Widgets.css"
+import NYT from "../images/NYT.png"
+
 
 
 
@@ -44,7 +48,18 @@ function Sidebar() {
                 <RecentItem topic='Backend Developer' />
                 <RecentItem topic='Frontend Developer' />
                 
+            </div>     
+            <div className="widgets">
+                <div className="widget__top">
+                    <h5 className="widget__title">The Latest In Tech</h5>
+                    <a className="widget__img" href="https://developer.nytimes.com/"><img src={NYT} alt="New York Times Logo and Attribute"></img></a>
+                </div>
+                <br/>
+                <div className="widget__bottom text-muted">
+                    <TechArticleList />
+                </div>
             </div>
+
             
         </div>
     )

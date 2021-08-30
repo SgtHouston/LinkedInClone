@@ -25,8 +25,9 @@ function ArticleList() {
                 .then((res) => res.json())
                 .then((data) => {
                     // Store results in piece of state
+                    
                     setArticles(data.results[0].article_list.results)
-                    console.log(articles)
+                    
                     // Use state to display results on the page
                 });
         
@@ -35,10 +36,10 @@ function ArticleList() {
             .then((data) => {
                 // Store results in piece of state
                 
-                console.log('logging data 2')
-                // console.log(data)
+                console.log('logging data fetch 2')
                 setTechArticles(data.results)
                 console.log(techArticles)
+                
                 // Use state to display results on the page
             });
 

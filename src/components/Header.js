@@ -22,14 +22,14 @@ function Header() {
                     </div>
                 </div> 
                 <div className="header__right">
-                    <HeaderOption Icon={HomeIcon} title="Home" />
-                    <HeaderOption Icon={SupervisorAccountIcon} title="My Network"/>
-                    <HeaderOption Icon={BusinessCenterIcon} title="Jobs"/>
-                    <HeaderOption Icon={SmsIcon} title="Messaging"/>
-                    <HeaderOption Icon={NotificationsIcon} title="Notifications"/>
-                    <HeaderOption avatar={Chris} title="Me" />
-                    <HeaderOption Icon={AppsIcon} title="Work" />
-                    <HeaderOption Icon={LiveTvIcon} title="Learning" />
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={HomeIcon} title="Home" /></a>
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={SupervisorAccountIcon} title="My Network"/></a>
+                    <a href="https://Indubitably.app"><HeaderOption Icon={BusinessCenterIcon} title="Jobs"/></a>
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={SmsIcon} title="Messaging"/></a>
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={NotificationsIcon} title="Notifications"/></a>
+                    <a href="https://www.linkedin.com"><HeaderOption avatar={Chris} title="Me" /></a>
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={AppsIcon} title="Work" /></a>
+                    <a href="https://www.linkedin.com"><HeaderOption Icon={LiveTvIcon} title="Learning" /></a>
                 </div>
             </div>
     )
