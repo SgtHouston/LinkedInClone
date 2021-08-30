@@ -1,31 +1,43 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Ad from './components/Ad';
-import Feed from './components/Feed';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Widgets from './components/Widgets';
-// import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Main from './components/Main';
+
+import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import Login from './components/Login';
+import Profile from './components/Profile';
+
 
 function App() {
   return (
-    <div className="app">
-      {/* Header */}
-      <Header />
+    <div className="App">
+      {/* Step 1 */}
+      <Router >
+        {/* Header is above switch so it appears on every page
+        < Header /> */}
+        <Switch>
 
-      {/* App Body */}
-      <Ad />
-      <div className="app__body" >
-        
-        {/* Sidebar */}
-        <Sidebar />
-        {/* Feed */}
-        <Feed />
-        {/* Widgets */}
-        <Widgets />
-      </div>
-      
+          <Route exact path="/">
+            <Login />
+          </Route>
+
+          <Route path="/main">
+            < Main />
+          </Route>
+
+          <Route path="/profile">
+            <Profile />
+          </Route>
+
+
+          <Route path="*">
+            <Redirect to="/">
+            {/* Redirect to homepage like so or leave an h1 page not found and a Link to return to homepage */}
+            </Redirect>
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }
