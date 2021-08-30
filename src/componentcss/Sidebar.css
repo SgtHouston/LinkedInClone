@@ -3,6 +3,7 @@
     flex: 0.3;
     border-radius: 10px;
     height: fit-content;
+    max-width: 300px;
     
     
 }

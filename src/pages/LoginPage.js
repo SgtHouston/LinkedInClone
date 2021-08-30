@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from './Header'
-import Ad from './Ad'
-import { Link } from 'react-router-dom'
+import Header from '../components/Header'
+import Ad from '../components/Ad'
 
-function Login() {
+
+function LoginPage() {
     return (
         <div>
             {/* Header */}
@@ -16,4 +16,4 @@ function Login() {
     )
 }
 
-export default Login
+export default LoginPage

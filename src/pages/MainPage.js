@@ -1,14 +1,14 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Ad from './Ad';
-import Feed from './Feed';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Widgets from './Widgets';
+import Ad from '../components/Ad'
+import Feed from '../components/Feed';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+import Widgets from '../components/Widgets';
 import "../componentcss/Main.css"
 
 
-function Main() {
+function MainPage() {
     return (
         <div className="main">
             {/* Header */}
@@ -30,4 +30,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default MainPage;

@@ -9,8 +9,10 @@
 .main__body {
     display: flex;
     width: 97%;
-    justify-content: space-evenly;
+    justify-content:space-around;
     
 }
 
 .adblack { color: black;}
+
+.ad:hover { color: black;}

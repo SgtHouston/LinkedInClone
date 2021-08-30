@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Main from './components/Main';
-
 import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import Login from './components/Login';
-import Profile from './components/Profile';
+import LoginPage from './pages/LoginPage';
+import ProfilePage from './pages/ProfilePage';
+import MainPage from './pages/MainPage';
 
 
 function App() {
@@ -18,15 +17,15 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Login />
+            <LoginPage />
           </Route>
 
           <Route path="/main">
-            < Main />
+            < MainPage />
           </Route>
 
           <Route path="/profile">
-            <Profile />
+            <ProfilePage />
           </Route>
 
 

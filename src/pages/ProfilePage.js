@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from './Header'
-import Ad from './Ad'
+import Header from '../components/Header'
+import Ad from '../components/Ad'
 import "../componentcss/Profile.css"
 
-function Profile() {
+function ProfilePage() {
     return (
         <div>
             {/* Header */}
@@ -24,4 +24,4 @@ function Profile() {
     )
 }
 
-export default Profile
+export default ProfilePage
