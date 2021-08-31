@@ -8,13 +8,15 @@ import "../componentcss/Widgets.css"
 import NYT from "../images/NYT.png"
 
 
-function Sidebar() {
+
+
+function Sidebar(name, photoUrl) {
 
     return (
         <div className="sidebar">
             <div className="sidebar__top" >
                 <img src={ background } alt=""/> 
-                <Avatar className="sidebar__avatar" />
+                <Avatar className="sidebar__avatar" src={photoUrl}/>
                 <h2 className="sidebar__info text-center">Welcome, <br/>Christoper!</h2>
                 <h4 className="sidebar__info">Add a photo</h4>
             </div>

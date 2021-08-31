@@ -11,15 +11,15 @@ import SendIcon from '@material-ui/icons/Send';
 import PublicIcon from '@material-ui/icons/Public';
 
 
+
 function Post({name, jobdescription, message, photoUrl, time}) {
     const now = new Date()
     
-
     return ( 
         
         <div className="post">
             <div className="post__header">
-                <Avatar className="post__avatar"/>
+                <Avatar className="post__avatar" src={photoUrl}/>
                 <div className="post__info">
                     <p className="post__name">{name} &#8226; 1st</p>
                     <p className="post__description text-muted">{jobdescription}</p>
