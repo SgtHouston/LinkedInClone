@@ -8,13 +8,12 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import SendIcon from '@material-ui/icons/Send';
+import PublicIcon from '@material-ui/icons/Public';
 
 
-function Post({name, description, message, photoUrl, time}) {
+function Post({name, jobdescription, message, photoUrl, time}) {
     const now = new Date()
-
-
-
+    
 
     return ( 
         
@@ -23,8 +22,8 @@ function Post({name, description, message, photoUrl, time}) {
                 <Avatar className="post__avatar"/>
                 <div className="post__info">
                     <p className="post__name">{name} &#8226; 1st</p>
-                    <p className="post__description text-muted">{description}</p>
-                    <p className="post__time text-muted"><RelativeTime date={now}/></p>
+                    <p className="post__description text-muted">{jobdescription}</p>
+                    <p className="post__time text-muted"><RelativeTime date={now}/> &#8226; <PublicIcon style={{ fontSize: 16 }}/></p>
                 </div>
             </div>
             <div className="post__body">
@@ -42,7 +41,6 @@ function Post({name, description, message, photoUrl, time}) {
                 </div>
             </div>
         </div>
-        
     )
 }
 

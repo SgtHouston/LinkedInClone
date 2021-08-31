@@ -4,8 +4,38 @@
     margin-bottom: 10px;
     border-radius: 10px;
     border: 1px solid lightgray;
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
 }
 
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+    
 .post__header {
     display: flex;
     margin-bottom: 10px;
@@ -14,11 +44,9 @@
 
 .post__info { 
     margin-left: 10px;
-    
 }
 .post__info > p {
     font-size: 14px;
-
 }
 
 .post__body {
@@ -34,7 +62,6 @@
     display: flex;
     justify-content: space-evenly;
     flex: 0.7;
-    
 }
 
 .post__bottom {
@@ -44,6 +71,18 @@
 .spacediv{
     min-width: 1vw;
     flex: 0.3;
-    
+}
+
+.post-enter {
+    opacity: 0;
+}
+
+.post-enter:active{
+    opacity: .5;
+    transition: opacity 1000ms;
+}
+
+.post-enter-done {
+    opacity: 1;
 }
 

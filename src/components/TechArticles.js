@@ -4,20 +4,17 @@
 // API Link:
 // https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=yourkey
 
-
-
-
-
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ListGroup } from "react-bootstrap";
 import TechArticle from './TechArticle'
+import { useDispatch, useSelector } from 'react-redux'
+import { actionSetTechArticles } from '../redux/actions/techarticles';
 
 function TechArticleList() {
-    
-    const [techArticles, setTechArticles] = useState([])
+    const dispatch = useDispatch()
+    const techarticles = useSelector(state => state.techarticles)
 
-    
     // Same as ComponentDidMount
     useEffect(() => {
         
@@ -25,27 +22,19 @@ function TechArticleList() {
             .then((res) => res.json())
             .then((data) => {
                 // Store results in piece of state
-                setTechArticles(data.results)
+                dispatch(actionSetTechArticles(data.results))
                 // Use state to display results on the page
             });
-
-            
     }, []); 
     // empty dependence array to only run once
 
-
-
-
-
-    if(techArticles === null) {
+    if(techarticles === null) {
         return 'loading...'
     }
 
-
-
     return (
         <ListGroup>
-            {techArticles.map((techArticle, index) => {
+            {techarticles.map((techArticle, index) => {
                 return <TechArticle key={index} data={techArticle} />;
             })}
         </ListGroup>

@@ -3,7 +3,8 @@ import Header from '../components/Header'
 import Ad from '../components/Ad'
 
 
-function LoginPage() {
+
+function LoginPage(props) {
     return (
         <div>
             {/* Header */}

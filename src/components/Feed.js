@@ -7,33 +7,44 @@ import EventIcon from '@material-ui/icons/Event';
 import FormatIcon from '@material-ui/icons/FormatIndentIncrease';
 import { Avatar } from "@material-ui/core";
 import Post from './Post';
-import { useEffect, useState } from 'react';
-import db from "../firebase"
+import { useState } from 'react';
+// import db from "../firebase"
 // import { doc, setDoc, updateDoc } from "firebase/firestore";
-import avatar from "../images/Avatar.png"
-
+import avatar from '../images/Avatar.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { actionSetPosts } from '../redux/actions/posts';
+import { CSSTransition } from 'react-transition-group';
 
 
 function Feed() {
-    const [posts, setPosts] = useState([]);
-    const [input, setInput] = useState('');
-
-    // 
     
+    const [input, setInput] = useState('');
+    const dispatch = useDispatch()
+    const posts = useSelector(state => state.posts)
 
     const postMessage = e => {
         e.preventDefault();
-        // Take post and add it to the db
-        // ({
-        //     name: 'Chris H',
-        //     description: 'this is a test',
-        //     message: "Cool post message",
-        //     photoUrl: '',
-        //     timestamp: new Date() 
-        // })
-
+        // Store results in piece of state
+        const user = {
+            name: 'Chris Houston',
+            jobdescription : 'Software Developer',
+            message : input,
+            photoUrl : avatar,
+        }
+        
+        // Use state to display results on the page
+        dispatch(actionSetPosts(
+            {
+                name: user.name,
+                jobdescription : user.jobdescription,
+                message : input,
+                photoUrl : user.photoUrl,
+            }
+        ))
+        
+        // reset Text field
+        setInput('')
     }
-
 
 
     return (
@@ -41,6 +52,7 @@ function Feed() {
             <div className="feed__inputContainer">
                 <div className="feed__inputContainertop">
                     <Avatar avatar={Avatar} />
+                    <div className="spacerdivfeed"></div>
                     <div className="feed__input">
                         <form >
                             <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Start a post"/>
@@ -56,31 +68,22 @@ function Feed() {
                     <InputOption  Icon={FormatIcon} title="Write Article" color="#F97C83"/>   
                 </div>
             </div>
-            <div style={{ borderTop: "2px solid lightgray", marginLeft: 20, marginRight: 20 }}></div>
-            <br/ >
+            <div style={{ borderTop: "2px solid lightgray", marginLeft: 2, marginRight: 2 }}></div>
+            <br/>
             <div className="mainfeed">
-                
-                {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
-                    <Post 
-                        key = {id} 
-                        name = {name}
-                        description = {description}
-                        message ={message}
-                        photoUrl = {photoUrl}
-                        />
-                ))}
-                
-                <Post key={1} name={"Chris Houston"} description={"Software Developer"} message="Wow, I can't wait to build more projects like this!" photoUrl={avatar}/> 
-                <Post key={2} name={"Billy Bob"} description={"Backend Engineer"} message="The name's Billy Bob and I need a job..." photoUrl={avatar}/>
-                <Post key={3} name={"Elon Musky"} description={"Billionaire"} message="Buy Doge and self-drive to the moon!" photoUrl={avatar}/>
-                <Post key={4} name={"Linked Ingram"} description={"Tech Recruiter"} message="Now hiring entry-level developers!  Masters degree in a STEM field and minimum 6 years Java or C# experience required." photoUrl={avatar}/>
-                <Post key={4} name={"Johnny Appleseed"} description={"LinkedIn Superstar"} message="I sure do love networking!" photoUrl={avatar}/>
-
-                
+                    { posts.reverse().map(({ name, jobdescription, message, photoUrl }, index) => (
+                        <CSSTransition timeout={500} className="post" key={index}>
+                            <Post 
+                                key = {index} 
+                                name = {name}
+                                jobdescription = {jobdescription}
+                                message ={message}
+                                photoUrl = {photoUrl}
+                                />
+                        </ CSSTransition >
+                    ))}
             </div>
-            
         </div>  
-        
     )
 }
 
