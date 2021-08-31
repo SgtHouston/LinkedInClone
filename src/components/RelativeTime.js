@@ -16,4 +16,4 @@ export default RelativeTime;
 
 // data.published_date -- format 2021-08-27
 
-{/* <RelativeTime date={published_date} /> */}
+/* <RelativeTime date={published_date} /> */

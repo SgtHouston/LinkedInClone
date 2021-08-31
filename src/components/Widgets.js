@@ -4,7 +4,6 @@ import NYT from "../images/NYT.png"
 import ArticleList from './ArticleList'
 
 
-
 export default function Widgets() {
     
     return (
@@ -17,7 +16,6 @@ export default function Widgets() {
             <div className="widget__bottom">
                 <ArticleList/>
             </div>
-
         </div>
     )
 }

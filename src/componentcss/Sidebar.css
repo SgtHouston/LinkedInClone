@@ -1,11 +1,9 @@
 .sidebar {
     top: 80px;
-    flex: 0.3;
     border-radius: 10px;
     height: fit-content;
-    max-width: 300px;
-    
-    
+    max-width: 250px;
+    min-width: 200px;
 }
 
 .sidebar__avatar{ 
@@ -15,7 +13,6 @@
 .sidebar__avatar{
     margin-top: 10px;
     display: flex;
-
 }
 
 .sidebar__top {
@@ -28,19 +25,18 @@
     border-top-right-radius: 10px;
     background-color: white;
     padding-bottom: 10px;
-    
 }
 
 .sidebar__top > h4 {
-    color: gray;
-    font-size: 12px;
+    color: #0a66c2;
+    font-size: 13px;
+    font-weight: 500;;
 }
 
 .sidebar__top > h2 {
-    font-size: 18px;
+    font-size: 16px;
 }
 .sidebar__stats {
-    text-align: center;
     padding: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
@@ -69,14 +65,14 @@
 
 .sidebar__stat > p {
     color: gray;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
+
 }
 
 .sidebar__statNumber {
     font-weight: 600;
     color: #0a66c2 !important; /* Override Material UI */
-    
 }
 
 .sidebar__info {
@@ -90,9 +86,8 @@
     border: 1px solid lightgray;
     background-color: white;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .sidebar__recentItem {
@@ -119,7 +114,8 @@
 
 .sidebar__bottom > p {
     font-size: 13px;
-    padding-bottom: 10px;
+    padding: 5px;
+    margin-bottom: 0;
 }
 
 .sidebar__groups{
@@ -128,5 +124,5 @@
 }
 
 .spacerdiv{
-    min-width: 1vw;
+    min-width: 4.5vw;
 }

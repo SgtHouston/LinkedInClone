@@ -1,6 +1,5 @@
 .widgets {
     top: 80px;
-    flex: 0.4 ;
     display: flex;
     top: 80px;
     border-radius: 10px;
@@ -11,14 +10,17 @@
     background-color: white;
     padding-bottom: 10px;
     max-width: 400px;
-    
-    
-    
+    min-width: 325px;
 }
 
 .widget__top {
-    padding-left: 10px;
     padding-top: 5px;
-    
+    background-color:#fff;
+    border-radius: 10px 10px 0px 0px;
 }
+
+.widget__title {
+    padding-left: 10px;
+}
+
 

@@ -6,8 +6,6 @@ import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
 
 
-
-
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyAYyc7jS1VgEhS7nuKnVkie1EP5jrcnPkI",
     authDomain: "linkedin-clone-f9ce5.firebaseapp.com",

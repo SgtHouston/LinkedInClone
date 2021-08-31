@@ -8,7 +8,11 @@ import Widgets from '../components/Widgets';
 import "../componentcss/Main.css"
 
 
-function MainPage() {
+
+
+function MainPage(props) {
+
+
     return (
         <div className="main">
             {/* Header */}
@@ -17,13 +21,18 @@ function MainPage() {
             {/* App Body */}
             <Ad />
             <div className="main__body" >
+                <div className="spacerdiv">
 
+                </div>
                 {/* Sidebar */}
                 <Sidebar />
                 {/* Feed */}
                 <Feed />
                 {/* Widgets */}
                 <Widgets />
+                <div className="spacerdiv">
+
+                </div>
             </div>
 
         </div>

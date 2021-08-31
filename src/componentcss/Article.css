@@ -2,6 +2,7 @@
     font-size: 13px;
     font-size: 13px;
     display: flex;
+    flex: 0.3;
 }
 
 .article__left {
@@ -15,7 +16,6 @@
 }
 .article:hover{
     background-color:rgba(245, 245, 245, 0.5);
-    
 }
 
 .article__top {
@@ -26,8 +26,6 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
-
-    
 }
 
 .article__title:hover{

@@ -28,7 +28,6 @@ function App() {
             <ProfilePage />
           </Route>
 
-
           <Route path="*">
             <Redirect to="/">
             {/* Redirect to homepage like so or leave an h1 page not found and a Link to return to homepage */}

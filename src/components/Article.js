@@ -24,14 +24,6 @@ function Article(props) {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    
-
-
-
-
-
-
-
     return (
         <ListGroupItem className="article">
             <div className="article__left">
