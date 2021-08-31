@@ -1,3 +1,4 @@
+
 import React from 'react'
 import '../componentcss/Feed.css'
 import InputOption from './InputOption';
@@ -10,41 +11,58 @@ import Post from './Post';
 import { useState } from 'react';
 // import db from "../firebase"
 // import { doc, setDoc, updateDoc } from "firebase/firestore";
-import avatar from '../images/Avatar.png'
+import Chris from '../images/Avatar.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionSetPosts } from '../redux/actions/posts';
 import { CSSTransition } from 'react-transition-group';
+import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
 
 
 function Feed() {
-    
+
     const [input, setInput] = useState('');
+    const [fileInput, setFileInput] = useState({});
+
     const dispatch = useDispatch()
     const posts = useSelector(state => state.posts)
+
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    
 
     const postMessage = e => {
         e.preventDefault();
         // Store results in piece of state
         const user = {
             name: 'Chris Houston',
-            jobdescription : 'Software Developer',
-            message : input,
-            photoUrl : avatar,
+            jobdescription: 'Software Developer',
+            message: input,
+            photoUrl: Chris,
         }
         
+        
+
         // Use state to display results on the page
         dispatch(actionSetPosts(
             {
                 name: user.name,
-                jobdescription : user.jobdescription,
-                message : input,
-                photoUrl : user.photoUrl,
+                jobdescription: user.jobdescription,
+                message: input,
+                photoUrl: user.photoUrl,
+                
             }
         ))
-        
+
         // reset Text field
         setInput('')
+        handleClose()
     }
+
+    const handleClose = () => {
+        setShow(false);
+    };
+
+
 
 
     return (
@@ -54,36 +72,53 @@ function Feed() {
                     <Avatar avatar={Avatar} />
                     <div className="spacerdivfeed"></div>
                     <div className="feed__input">
-                        <form >
-                            <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Start a post"/>
-                            <button onClick={postMessage}  type="submit"> Send</button>
+                        <form onClick={handleShow} >
+                            Start a post
                         </form>
+                        <Modal size="md" show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Create A Post</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>Christopher Houston USMC (Ret.)</Modal.Body>
+                            <InputGroup style={{ height: '10rem' }}>
+                                <FormControl as="textarea" aria-label="With textarea" type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Start a post" />
+                            </InputGroup>
+
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Exit
+                                </Button>
+                                <Button variant="primary" onClick={postMessage}>
+                                    Post
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
                 </div>
                 <div className="feed__inputOptions">
                     {/* Input Options */}
-                    <InputOption  Icon={ImageIcon} title="Photo" color="70B5F9"/>
-                    <InputOption  Icon={SubscriptionsIcon} title="Video" color="#6EB84C"/>
-                    <InputOption  Icon={EventIcon} title="Event" color="#E09230"/>
-                    <InputOption  Icon={FormatIcon} title="Write Article" color="#F97C83"/>   
+                    <InputOption Icon={ImageIcon} title="Photo" color="70B5F9" />
+                    <InputOption Icon={SubscriptionsIcon} title="Video" color="#6EB84C" />
+                    <InputOption Icon={EventIcon} title="Event" color="#E09230" />
+                    <InputOption Icon={FormatIcon} title="Write Article" color="#F97C83" />
                 </div>
             </div>
             <div style={{ borderTop: "2px solid lightgray", marginLeft: 2, marginRight: 2 }}></div>
-            <br/>
+            <br />
             <div className="mainfeed">
-                    { posts.reverse().map(({ name, jobdescription, message, photoUrl }, index) => (
-                        <CSSTransition timeout={500} className="post" key={index}>
-                            <Post 
-                                key = {index} 
-                                name = {name}
-                                jobdescription = {jobdescription}
-                                message ={message}
-                                photoUrl = {photoUrl}
-                                />
-                        </ CSSTransition >
-                    ))}
+                {posts.reverse().map(({ name, jobdescription, message, photoUrl }, index) => (
+                    <CSSTransition timeout={500} className="post" key={index}>
+                        <Post
+                            key={index}
+                            name={name}
+                            jobdescription={jobdescription}
+                            message={message}
+                            photoUrl={photoUrl}
+                        />
+                    </ CSSTransition >
+                ))}
             </div>
-        </div>  
+        </div>
     )
 }
 
