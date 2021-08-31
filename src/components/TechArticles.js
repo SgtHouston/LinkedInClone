@@ -25,7 +25,7 @@ function TechArticleList() {
                 dispatch(actionSetTechArticles(data.results))
                 // Use state to display results on the page
             });
-    }, []); 
+    }, [dispatch]); 
     // empty dependence array to only run once
 
     if(techarticles === null) {
