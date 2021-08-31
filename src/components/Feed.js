@@ -21,7 +21,7 @@ import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
 function Feed() {
 
     const [input, setInput] = useState('');
-    const [fileInput, setFileInput] = useState({});
+    
 
     const dispatch = useDispatch()
     const posts = useSelector(state => state.posts)
