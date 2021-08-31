@@ -18,4 +18,5 @@
 
 .spacerdiv {
     flex: 1;
+    min-width: 4.5vw;
 }

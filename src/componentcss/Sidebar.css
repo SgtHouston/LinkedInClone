@@ -123,6 +123,6 @@
     font-weight: bolder;
 }
 
-.spacerdiv{
-    min-width: 4.5vw;
+.spacerdiv__side{
+    min-width: 1.5vw;
 }

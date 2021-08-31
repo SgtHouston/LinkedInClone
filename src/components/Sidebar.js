@@ -23,12 +23,12 @@ function Sidebar(name, photoUrl) {
             <div className="sidebar__stats" >
                 <div className ="sidebar__stat">
                     <p>Who viewed your profile</p>
-                    <div className="spacerdiv"></div>
+                    <div className="spacerdiv__side"></div>
                     <p className="sidebar__statNumber" >931</p>
                 </div>
                 <div className="sidebar__stat" >
                     <p>Views of your post</p>
-                    <div className="spacerdiv"></div>
+                    <div className="spacerdiv__side"></div>
                     <p className="sidebar__statNumber" >1,342</p>
                 </div>
             </div>
