@@ -1,6 +1,6 @@
-import { Avatar} from "@material-ui/core"
-import avatar from '../../images/Avatar.png'
 
+import Chris from '../../images/Avatar.png'
+import Avatar from '@material-ui/icons/AccountCircle';
 
 
 const defaultState = [
@@ -8,7 +8,7 @@ const defaultState = [
         name: "Chris Houston",
         jobdescription : "Software Developer",
         message : "Wow, I can't wait to build more projects like this!",
-        photoUrl : {avatar}
+        photoUrl : {Chris}
     },
     {
         name: "Elon Musky",
