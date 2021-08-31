@@ -1,14 +1,24 @@
 import { createStore, combineReducers } from "redux";
-// import { posts } from './reducers/posts'
+
 import { techarticles } from './reducers/techarticles'
 import { posts } from './reducers/posts'
+import { compose, applyMiddleware } from "@reduxjs/toolkit";
+import thunkMiddleware from 'redux-thunk'
+import { user } from './reducers/user'
+
 
 // combines all existing reducers into a larger object
 const rootReducer = combineReducers({
     techarticles,
-    posts
+    posts,
+    user
 })
 
-export const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const middleware = compose(
+    applyMiddleware(thunkMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+export const store = createStore(rootReducer, middleware)
 
 

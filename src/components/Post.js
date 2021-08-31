@@ -15,6 +15,7 @@ import PublicIcon from '@material-ui/icons/Public';
 function Post({name, jobdescription, message, photoUrl, time}) {
     const now = new Date()
     
+    
     return ( 
         
         <div className="post">

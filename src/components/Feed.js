@@ -9,11 +9,9 @@ import FormatIcon from '@material-ui/icons/FormatIndentIncrease';
 import { Avatar } from "@material-ui/core";
 import Post from './Post';
 import { useState } from 'react';
-// import db from "../firebase"
-// import { doc, setDoc, updateDoc } from "firebase/firestore";
 import Chris from '../images/Avatar.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { actionSetPosts } from '../redux/actions/posts';
+import { actionAddPost } from '../redux/actions/posts';
 import { CSSTransition } from 'react-transition-group';
 import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
 
@@ -21,15 +19,11 @@ import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
 function Feed() {
 
     const [input, setInput] = useState('');
-    
-
     const dispatch = useDispatch()
     const posts = useSelector(state => state.posts)
-
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     
-
     const postMessage = e => {
         e.preventDefault();
         // Store results in piece of state
@@ -40,16 +34,14 @@ function Feed() {
             photoUrl: Chris,
         }
         
-        
-
         // Use state to display results on the page
-        dispatch(actionSetPosts(
+        dispatch(actionAddPost(
             {
                 name: user.name,
                 jobdescription: user.jobdescription,
                 message: input,
                 photoUrl: user.photoUrl,
-                
+                time: new Date()
             }
         ))
 

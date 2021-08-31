@@ -4,6 +4,9 @@ import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
+import { onSnapshot, collection, query, getDocs, orderBy } from "firebase/firestore";
+import { store } from './redux/store'
+import { actionSetPosts } from './redux/actions/posts';
 
 
 const firebaseApp = initializeApp({
@@ -17,20 +20,42 @@ const firebaseApp = initializeApp({
     measurementId: "G-GHWGY82X9X"
 });
 
-// export const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
 export const db = getFirestore(firebaseApp);
 
 // detect auth state
 // takes an argument of either the service returned from the getter 
 // function or some relevant container object
-const auth = getAuth(firebaseApp);
+
 onAuthStateChanged(auth, user => {
-  // Check for user status
+    // Check for user status
     if (user !== null) {
         console.log('Logged in!')
     } else {
         console.log('No user')
     }
 });
+
+const q = query(collection(db, "posts"), orderBy("time"));
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const posts = [];
+    querySnapshot.forEach((doc) => {
+        posts.push(doc.data());
+    });
+    store.dispatch(actionSetPosts(posts));
+});
+
+(async () => {
+    const querySnapshot = await getDocs(collection(db, "posts"));
+    const posts = [];
+    querySnapshot.forEach((doc) => {
+        posts.push(doc.data());
+    });
+    store.dispatch(actionSetPosts(posts));
+    
+})()
+
+
+
 
 export default firebase

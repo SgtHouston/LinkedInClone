@@ -126,6 +126,7 @@
     color: gray;
     font-weight: bolder;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .sidebar__recentItem:hover {
@@ -135,6 +136,12 @@
     color: black;
 
 }
+
+.sidebar__recentItem > p {
+    margin-bottom: 0;
+
+}
+
 
 .sidebar__hash {
     margin-right: 5px;

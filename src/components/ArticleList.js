@@ -12,7 +12,7 @@ import Article from "./Article"
 
 function ArticleList() {
     const [articles, setArticles] = useState([]);
-    const [techArticles, setTechArticles] = useState([])
+    
 
     // Same as ComponentDidMount
     useEffect(() => {
@@ -26,14 +26,6 @@ function ArticleList() {
                     // Use state to display results on the page
                 });
         
-        fetch('https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=ynxSgWAdQkHjVatrspBWvMI3e9WIrWrP')
-            .then((res) => res.json())
-            .then((data) => {
-                // Store results in piece of state
-                setTechArticles(data.results)
-                console.log(techArticles)
-                // Use state to display results on the page
-            });
     }, []); 
     // empty dependence array to only run once
 

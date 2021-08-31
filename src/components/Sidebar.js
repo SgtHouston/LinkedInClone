@@ -8,8 +8,6 @@ import "../componentcss/Widgets.css"
 import NYT from "../images/NYT.png"
 
 
-
-
 function Sidebar(name, photoUrl) {
 
     return (
