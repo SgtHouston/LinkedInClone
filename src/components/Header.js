@@ -1,13 +1,13 @@
 import React from 'react'
 import '../componentcss/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
-import HeaderOption from './HeaderOption';
+import HeaderLink from './HeaderLink';
 import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import SmsIcon from '@material-ui/icons/Sms';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Chris from "../images/Avatar.png"
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppsIcon from '@material-ui/icons/Apps';
 import LiveTvIcon from '@material-ui/icons/LiveTv';
 import { signOut, getAuth } from "firebase/auth";
@@ -16,15 +16,10 @@ import { actionCreateUser } from '../redux/actions/user'
 import "../firebase";
 
 function Header() {
+
     const dispatch = useDispatch()
     const auth = getAuth();
-    function redirect_Page() {
-        var tID = setTimeout(function () {
-            window.location.href = "/";
-            window.clearTimeout(tID);		// clear time out.
-        }, 1000);
-    }
-
+    
 
     return (
         <div className="header">
@@ -33,8 +28,9 @@ function Header() {
                 <div className="header__search">
                     <SearchIcon />
                     <input type="text" placeholder="Search" />
-                    {/* sign out button */}
+                    
                 </div>
+                {/* sign out button */}
                 <button className="logout__button"
                         
                         onClick={() => {
@@ -47,7 +43,7 @@ function Header() {
                                     console.log(error);
                                 });
                             
-                            redirect_Page()
+                            
                         }}
                     >
                         Log Out
@@ -55,14 +51,14 @@ function Header() {
             </div>
 
             <div className="header__right">
-                <a href="/main"><HeaderOption Icon={HomeIcon} title="Home" /></a>
-                <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
-                <a href="https://Indubitably.app" ><HeaderOption Icon={BusinessCenterIcon} title="Jobs" /></a>
-                <HeaderOption Icon={SmsIcon} title="Messaging" />
-                <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-                <HeaderOption avatar={Chris} title="Me" />
-                <HeaderOption Icon={AppsIcon} title="Work" />
-                <HeaderOption Icon={LiveTvIcon} title="Learning" />
+                <a href="/main"><HeaderLink Icon={HomeIcon} title="Home" /></a>
+                <HeaderLink Icon={SupervisorAccountIcon} title="My Network" />
+                <a href="https://Indubitably.app" ><HeaderLink Icon={BusinessCenterIcon} title="Jobs" /></a>
+                <HeaderLink Icon={SmsIcon} title="Messaging" />
+                <HeaderLink Icon={NotificationsIcon} title="Notifications" />
+                <HeaderLink avatar={AccountCircleIcon} title="Me" />
+                <HeaderLink Icon={AppsIcon} title="Work" />
+                <HeaderLink Icon={LiveTvIcon} title="Learning" />
             </div>
         </div>
     )

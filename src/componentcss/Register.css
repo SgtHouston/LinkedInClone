@@ -91,3 +91,11 @@
     padding-top: 10px;
 }
 
+.portfolio__link{
+    color: gray;
+}
+
+.portfolio__link:hover {
+    color: #4d4af3;
+}
+

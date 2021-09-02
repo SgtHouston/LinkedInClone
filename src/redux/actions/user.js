@@ -5,3 +5,17 @@ export function actionCreateUser (object) {
         object
     }
 }
+
+export function actionFetchUser () {
+    return {
+        type: 'FETCH_USER'
+        
+    }
+}
+
+export function actionLogoutUser () {
+    return {
+        type: 'LOGOUT_USER'
+        
+    }
+}

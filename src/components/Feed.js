@@ -9,11 +9,11 @@ import FormatIcon from '@material-ui/icons/FormatIndentIncrease';
 import { Avatar } from "@material-ui/core";
 import Post from './Post';
 import { useState } from 'react';
-import Chris from '../images/Avatar.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionAddPost } from '../redux/actions/posts';
 import { CSSTransition } from 'react-transition-group';
 import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
+
 
 
 function Feed() {
@@ -23,16 +23,17 @@ function Feed() {
     const posts = useSelector(state => state.posts)
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
+    const user = useSelector( state => state.user.user)
     
     const postMessage = e => {
         e.preventDefault();
         // Store results in piece of state
-        const user = {
-            name: 'Chris Houston',
-            jobdescription: 'Software Developer',
-            message: input,
-            photoUrl: Chris,
-        }
+        // const user = {
+        //     name: 'Chris Houston',
+        //     jobdescription: 'Software Developer',
+        //     message: input,
+        //     photoUrl: Chris,
+        // }
         
         // Use state to display results on the page
         dispatch(actionAddPost(
@@ -40,7 +41,7 @@ function Feed() {
                 name: user.name,
                 jobdescription: user.jobdescription,
                 message: input,
-                photoUrl: user.photoUrl,
+                photoUrl: user.photoUrl || '',
                 time: new Date()
             }
         ))
@@ -71,7 +72,7 @@ function Feed() {
                             <Modal.Header closeButton>
                                 <Modal.Title>Create A Post</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Christopher Houston USMC (Ret.)</Modal.Body>
+                            <Modal.Body>{user.name}</Modal.Body>
                             <InputGroup style={{ height: '10rem' }}>
                                 <FormControl as="textarea" aria-label="With textarea" type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Start a post" />
                             </InputGroup>

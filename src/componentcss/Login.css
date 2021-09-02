@@ -1,12 +1,24 @@
 .login__header {
     margin-left: 45px;
-    margin-top: 25px;
+    margin-right: 45px;
+    display: flex;
     animation: fadeIn 3s;
     -webkit-animation: fadeIn 3s;
     -moz-animation: fadeIn 3s;
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
+    justify-content: space-between;
     
+}
+
+.register__btn {
+    margin-top: 10px;
+    background-color: #0C63A8;
+    color: #fff;
+    border-width: 0px;
+    border-radius: 20px;
+    min-height: 50px;
+    min-width: 100px;
 }
 
 @keyframes fadeIn {
@@ -35,7 +47,6 @@
 }
 
 .header__img > img {
-    max-width: 200px;
     animation: fadeIn 3s;
     -webkit-animation: fadeIn 3s;
     -moz-animation: fadeIn 3s;
@@ -123,8 +134,9 @@
     max-width: 400px;
     margin-left: 45px;
     border-radius: 10px;
-    min-height: 50px
-    
+    min-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .login__button {

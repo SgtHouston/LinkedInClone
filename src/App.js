@@ -3,9 +3,9 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import LoginPage from './pages/LoginPage';
-import ProfilePage from './pages/ProfilePage';
 import MainPage from './pages/MainPage';
 import RegisterPage from './pages/Register';
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 function App() {
@@ -21,13 +21,13 @@ function App() {
             <LoginPage />
           </Route>
 
-          <Route path="/main">
+          <ProtectedRoute path="/main">
             < MainPage />
-          </Route>
+          </ ProtectedRoute>
 
-          <Route path="/profile">
+          {/* <Route path="/profile">
             <ProfilePage />
-          </Route>
+          </Route> */}
 
           <Route path="/register">
             <RegisterPage />

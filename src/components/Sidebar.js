@@ -1,21 +1,23 @@
 import '../componentcss/Sidebar.css';
 import { Avatar } from "@material-ui/core";
 import "../componentcss/Sidebar.css"
-import background from "../images/Background.jpg"
+import background from "../images/ProfileBG.jpg"
 import RecentItem from './RecentItem';
 import TechArticleList from './TechArticles';
 import "../componentcss/Widgets.css"
 import NYT from "../images/NYT.png"
+import { useSelector } from 'react-redux'
 
 
 function Sidebar(name, photoUrl) {
+    const user = useSelector( state => state.user.user)
 
     return (
         <div className="sidebar">
             <div className="sidebar__top" >
                 <img src={ background } alt=""/> 
                 <Avatar className="sidebar__avatar" src={ photoUrl}/>
-                <h2 className="sidebar__info text-center">Welcome, <br/>Christoper!</h2>
+                <h2 className="sidebar__info text-center">Welcome, <br/>{user.fname}!</h2>
                 <h4 className="sidebar__info">Add a photo</h4>
             </div>
             <div className="sidebar__stats" >
@@ -51,7 +53,7 @@ function Sidebar(name, photoUrl) {
             <div className="sidebar">
                 <div className="widget__top">
                     <h5 className="widget__title">The Latest In Tech</h5>
-                    <a className="widget__img" href="https://developer.nytimes.com/"><img src={NYT} alt="New York Times Logo and Attributation"></img></a>
+                    <a href="https://developer.nytimes.com/"><img src={NYT} className="widget__img" alt="New York Times Logo and Attributation"></img></a>
                 </div>
                 <div className="widget__bottom ">
                     <TechArticleList />

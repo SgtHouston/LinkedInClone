@@ -4,9 +4,10 @@ import 'firebase/compat/firestore';
 import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app"
-import { onSnapshot, collection, query, getDocs, orderBy } from "firebase/firestore";
+import { onSnapshot, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import { store } from './redux/store'
 import { actionSetPosts } from './redux/actions/posts';
+import { actionCreateUser } from './redux/actions/user';
 
 
 const firebaseApp = initializeApp({
@@ -28,14 +29,27 @@ export const db = getFirestore(firebaseApp);
 // takes an argument of either the service returned from the getter 
 // function or some relevant container object
 
-onAuthStateChanged(auth, user => {
+onAuthStateChanged(auth, async user => {
     // Check for user status
     if (user !== null) {
-        console.log('Logged in with Firebase!')
-        console.log(user)
+        // Create a reference to the users collection
+        const usersRef = collection(db, "users");
+
+        // Create a query against the collection
+        const q = query(usersRef, where("id", "==", user.uid));
+
+        // Query the user that matches uid
+        const querySnapshot = await getDocs(q);
         
+        // dispatch that user in actionCreateUser
+        if (querySnapshot.size > 0) {
+            store.dispatch(actionCreateUser(querySnapshot.docs[0].data()));
+        } else {
+            console.log("No such document!");
+        }
+
     } else {
-        console.log('No user')
+        store.dispatch(actionCreateUser(null));
     }
 });
 
@@ -48,10 +62,13 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
         posts.push(doc.data());
     });
     store.dispatch(actionSetPosts(posts));
+    
 });
 
+
+
 (async () => {
-    const querySnapshot = await getDocs(collection(db, "posts"), orderBy("time", "desc"));
+    const querySnapshot = await getDocs(query(collection(db, "posts"), orderBy("time", "desc")));
     const posts = [];
     querySnapshot.forEach((doc) => {
         posts.push(doc.data());

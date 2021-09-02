@@ -136,7 +136,7 @@ function RegisterPage() {
 
             </div>
             <div className="footer">
-                <p className="footer__text">2021 &#169; LinkedIn-Clone CHouston.dev </p>
+                <p className="footer__text">2021 &#169; LinkedIn-Clone <a className="portfolio__link" href="https://CHouston.dev">CHouston.dev</a></p>
             </div>
 
         </div>
