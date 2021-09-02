@@ -1,0 +1,101 @@
+.register__page {
+    background-color:#F0EFEB;
+    animation: fadeIn 3s;
+    -webkit-animation: fadeIn 3s;
+    -moz-animation: fadeIn 3s;
+    -o-animation: fadeIn 3s;
+    -ms-animation: fadeIn 3s;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.register__text {
+    font-weight: 400;
+}
+
+.header__img {
+    margin-top: 25px;
+}
+
+.form {
+    min-width: 360px;
+    border-color: black;
+}
+
+.form__div{
+    justify-content:space-around ;
+    margin-left: 0;
+    background-color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+
+.main__panel{
+    margin-left: 0;
+}
+
+.btn {
+    background-color: #0C63A8;
+    color: #fff;
+    border-radius: 20px;
+    min-height: 50px
+}
+
+.login__form-control {
+    border-color: black;
+    border-width: 1px;
+    max-height: 33px;
+}
+
+.input__label{
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    color: gray;
+    text-align: center;
+    height: 50px;
+    font-weight: 300;
+}
+
+.footer__text {
+    padding-top: 10px;
+}
+
+.portfolio__link{
+    color: gray;
+}
+
+.portfolio__link:hover {
+    color: #4d4af3;
+}
+

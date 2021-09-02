@@ -94,3 +94,14 @@
 a {
     text-decoration: none;
 }
+
+.logout__button {
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: #fff;
+    background-color: #0C63A8;
+    border: none;
+    border-radius: 5px;
+    min-width:70px
+}
