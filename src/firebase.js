@@ -23,6 +23,7 @@ const firebaseApp = initializeApp({
 export const auth = getAuth(firebaseApp);
 export const db = getFirestore(firebaseApp);
 
+
 // detect auth state
 // takes an argument of either the service returned from the getter 
 // function or some relevant container object
@@ -31,12 +32,16 @@ onAuthStateChanged(auth, user => {
     // Check for user status
     if (user !== null) {
         console.log('Logged in!')
+        console.log(user)
+        
     } else {
         console.log('No user')
     }
 });
 
-const q = query(collection(db, "posts"), orderBy("time"));
+
+
+const q = query(collection(db, "posts"), orderBy("time", "desc"));
 const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {
@@ -54,8 +59,5 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
     store.dispatch(actionSetPosts(posts));
     
 })()
-
-
-
 
 export default firebase
