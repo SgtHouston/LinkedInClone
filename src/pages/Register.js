@@ -77,7 +77,7 @@ function RegisterPage() {
             {/* LinkedIn Image Centered */}
             {/* Header */}
             <div className="register__header text-center">
-                <img className="header__img" src={Logo} alt=""></img>
+                <a href="/"><img className="header__img" src={Logo} alt=""></img></a>
             </div >
             <br />
             <div>

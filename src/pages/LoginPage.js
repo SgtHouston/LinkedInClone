@@ -115,12 +115,12 @@ function LoginPage(props) {
                             <legend className="col-md-12 mb-3 Register login__text"> Login</legend>
                             <div className="form-row">
                                 <div className="col-md-12 mb-3">
-                                    <input type="email" className="login__form-control" id="validationDefault01" placeholder="E-Mail" onChange={(e) => setEmail(e.target.value)} required />
+                                    <input type="email" className="login__form-control" id="validationDefault01" placeholder=" E-Mail" onChange={(e) => setEmail(e.target.value)} required />
                                 </div>
                                 <div className="col-md-12 mb-3">
-                                    <input type="password" className="login__form-control" id="validationDefault02" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
+                                    <input type="password" className="login__form-control" id="validationDefault02" placeholder=" Password" onChange={(e) => setPassword(e.target.value)} required />
                                 </div>
-                                <button className="btn login__button col-md-6 mb-3" type="submit" onClick={(e) => { handleLogin(e) }} > Login </button>
+                                <button className="btn login__button col-md-12 mb-3" type="submit" onClick={(e) => { handleLogin(e) }} > Login </button>
                             </div>
                         </fieldset>
                     </form>

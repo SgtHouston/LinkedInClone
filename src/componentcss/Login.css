@@ -6,6 +6,7 @@
     -moz-animation: fadeIn 3s;
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
+    
 }
 
 @keyframes fadeIn {
@@ -118,15 +119,20 @@
 }
 
 .login__form-control {
-    max-width: 500px;
+    min-width: 400px;
+    max-width: 400px;
+    margin-left: 45px;
+    border-radius: 10px;
+    min-height: 50px
     
 }
 
 .login__button {
     border-radius: 10px;
-    min-width: 100px;
-    max-width: 500px;
+    min-width: 400px;
+    max-width: 400px;
     margin-left: 45px;
+    min-height: 50px
 }
 
 .form__spacerdiv {
