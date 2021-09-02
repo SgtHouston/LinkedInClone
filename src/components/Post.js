@@ -13,7 +13,7 @@ import PublicIcon from '@material-ui/icons/Public';
 
 
 function Post({name, jobdescription, message, photoUrl, time}) {
-    const now = new Date()
+    
     
     
     return ( 
@@ -24,7 +24,7 @@ function Post({name, jobdescription, message, photoUrl, time}) {
                 <div className="post__info">
                     <p className="post__name">{name} &#8226; 1st</p>
                     <p className="post__description text-muted">{jobdescription}</p>
-                    <p className="post__time text-muted"><RelativeTime date={now}/> &#8226; <PublicIcon style={{ fontSize: 16 }}/></p>
+                    <p className="post__time text-muted"><RelativeTime date={time}/> &#8226; <PublicIcon style={{ fontSize: 16 }}/></p>
                 </div>
             </div>
             <div className="post__body">
