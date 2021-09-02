@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-do
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import MainPage from './pages/MainPage';
+import RegisterPage from './pages/Register';
 
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
 
           <Route path="/profile">
             <ProfilePage />
+          </Route>
+
+          <Route path="/register">
+            <RegisterPage />
           </Route>
 
           <Route path="*">

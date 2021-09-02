@@ -7,14 +7,33 @@ import Sidebar from '../components/Sidebar';
 import Widgets from '../components/Widgets';
 import "../componentcss/Main.css"
 import { useSelector } from 'react-redux'
+import { db } from "../firebase";
+import { useEffect } from 'react';
 
 
 function MainPage(props) {
 
     const user = useSelector( state => state.user)
-    console.log("You're logged in and on main! Here's your user info")
-    console.log(user)
-    
+    const uid = db._credentials.currentUser.uid
+
+    // Same as ComponentDidMount
+    useEffect(() => {
+        console.log("You're logged in and on main! Here's your user id")
+        
+        console.log(uid)
+        // if uid not null
+        if(uid) {
+            // return uid = uid from db users in firestore
+            console.log("i got the uid, it's", uid)
+            // store info in state
+            
+            // Use state to display info on the page
+        }
+        
+            
+            
+    },[uid]); 
+    // empty dependence array to only run once
     
     return (
         <div className="main">

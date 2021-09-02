@@ -31,7 +31,7 @@ export const db = getFirestore(firebaseApp);
 onAuthStateChanged(auth, user => {
     // Check for user status
     if (user !== null) {
-        console.log('Logged in!')
+        console.log('Logged in with Firebase!')
         console.log(user)
         
     } else {
@@ -51,7 +51,7 @@ const unsubscribe = onSnapshot(q, (querySnapshot) => {
 });
 
 (async () => {
-    const querySnapshot = await getDocs(collection(db, "posts"));
+    const querySnapshot = await getDocs(collection(db, "posts"), orderBy("time", "desc"));
     const posts = [];
     querySnapshot.forEach((doc) => {
         posts.push(doc.data());

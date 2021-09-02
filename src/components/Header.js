@@ -34,7 +34,9 @@ function Header() {
                     <SearchIcon />
                     <input type="text" placeholder="Search" />
                     {/* sign out button */}
-                    <button
+                </div>
+                <button className="logout__button"
+                        
                         onClick={() => {
                             signOut(auth)
                                 .then(() => {
@@ -48,9 +50,8 @@ function Header() {
                             redirect_Page()
                         }}
                     >
-                        Sign Out
+                        Log Out
                     </button>
-                </div>
             </div>
 
             <div className="header__right">
