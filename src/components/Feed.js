@@ -99,7 +99,7 @@ function Feed() {
             <div style={{ borderTop: "2px solid lightgray", marginLeft: 2, marginRight: 2 }}></div>
             <br />
             <div className="mainfeed">
-                {posts.reverse().map(({ name, jobdescription, message, photoUrl }, index) => (
+                {posts.reverse().map(({ name, jobdescription, message, photoUrl, time }, index) => (
                     <CSSTransition timeout={500} className="post" key={index}>
                         <Post
                             key={index}
@@ -107,6 +107,7 @@ function Feed() {
                             jobdescription={jobdescription}
                             message={message}
                             photoUrl={photoUrl}
+                            time={time.toDate()}
                         />
                     </ CSSTransition >
                 ))}
