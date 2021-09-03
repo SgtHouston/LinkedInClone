@@ -56,7 +56,7 @@ onAuthStateChanged(auth, async user => {
 
 
 const q = query(collection(db, "posts"), orderBy("time", "desc"));
-const unsubscribe = onSnapshot(q, (querySnapshot) => {
+onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((doc) => {
         posts.push(doc.data());

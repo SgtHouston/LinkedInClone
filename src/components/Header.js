@@ -21,9 +21,7 @@ function Header() {
     const dispatch = useDispatch()
     const auth = getAuth();
 
-    function resetField () {
-        
-    }
+    
     
 
     return (
