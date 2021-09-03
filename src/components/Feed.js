@@ -11,7 +11,6 @@ import Post from './Post';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { actionAddPost } from '../redux/actions/posts';
-import { CSSTransition } from 'react-transition-group';
 import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
 
 
@@ -27,15 +26,6 @@ function Feed() {
     
     const postMessage = e => {
         e.preventDefault();
-        // Store results in piece of state
-        // const user = {
-        //     name: 'Chris Houston',
-        //     jobdescription: 'Software Developer',
-        //     message: input,
-        //     photoUrl: Chris,
-        // }
-        
-        // Use state to display results on the page
         dispatch(actionAddPost(
             {
                 name: user.name,
@@ -65,7 +55,7 @@ function Feed() {
                     <Avatar avatar={Avatar} />
                     <div className="spacerdivfeed"></div>
                     <div className="feed__input">
-                        <form onClick={handleShow} >
+                        <form onClick={handleShow} title="Start a post">
                             Start a post
                         </form>
                         <Modal size="md" show={show} onHide={handleClose}>
@@ -100,16 +90,16 @@ function Feed() {
             <br />
             <div className="mainfeed">
                 {posts.reverse().map(({ name, jobdescription, message, photoUrl, time }, index) => (
-                    <CSSTransition timeout={500} className="post" key={index}>
-                        <Post
-                            key={index}
-                            name={name}
-                            jobdescription={jobdescription}
-                            message={message}
-                            photoUrl={photoUrl}
-                            time={time.toDate()}
-                        />
-                    </ CSSTransition >
+
+                    <Post
+                        key={index}
+                        name={name}
+                        jobdescription={jobdescription}
+                        message={message}
+                        photoUrl={photoUrl}
+                        time={time.toDate()}
+                    />
+                    
                 ))}
             </div>
         </div>

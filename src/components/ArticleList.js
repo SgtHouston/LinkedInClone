@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Spinner } from "react-bootstrap";
 import Article from "./Article"
 
 function ArticleList() {
@@ -30,7 +30,7 @@ function ArticleList() {
     // empty dependence array to only run once
 
     if(articles === null) {
-        return 'loading...'
+        return <Spinner animation="border" variant="secondary" role="status" />
     }
 
     return (

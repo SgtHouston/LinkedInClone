@@ -1,5 +1,4 @@
 import { createStore, combineReducers } from "redux";
-
 import { techarticles } from './reducers/techarticles'
 import { posts } from './reducers/posts'
 import { compose, applyMiddleware } from "@reduxjs/toolkit";
@@ -20,5 +19,4 @@ const middleware = compose(
 )
 
 export const store = createStore(rootReducer, middleware)
-
 

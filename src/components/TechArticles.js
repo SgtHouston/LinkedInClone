@@ -6,7 +6,7 @@
 
 import React from 'react'
 import { useEffect } from 'react';
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Spinner } from "react-bootstrap";
 import TechArticle from './TechArticle'
 import { useDispatch, useSelector } from 'react-redux'
 import { actionSetTechArticles } from '../redux/actions/techarticles';
@@ -29,7 +29,7 @@ function TechArticleList() {
     // empty dependence array to only run once
 
     if(techarticles === null) {
-        return 'loading...'
+        return <Spinner animation="border" variant="secondary" role="status" />
     }
 
     return (

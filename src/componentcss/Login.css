@@ -8,17 +8,23 @@
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
     justify-content: space-between;
+    min-width: 450px;
+    max-width: 1200px;
     
 }
 
 .register__btn {
-    margin-top: 10px;
+    margin-top: 25px;
     background-color: #0C63A8;
     color: #fff;
     border-width: 0px;
     border-radius: 20px;
     min-height: 50px;
     min-width: 100px;
+}
+
+.register__btn:hover {
+    color:black;
 }
 
 @keyframes fadeIn {
@@ -156,3 +162,6 @@
     color: #0C63A8;
 }
 
+.forgot__password {
+    margin-left: 45px;
+}

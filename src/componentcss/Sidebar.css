@@ -9,6 +9,7 @@
     -moz-animation: fadeIn 3s;
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
+    
 }
 
 @keyframes fadeIn {

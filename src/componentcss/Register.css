@@ -5,7 +5,7 @@
     -moz-animation: fadeIn 3s;
     -o-animation: fadeIn 3s;
     -ms-animation: fadeIn 3s;
-    min-height: 100vh;
+    min-height: 825px;
 }
 
 @keyframes fadeIn {
@@ -97,5 +97,21 @@
 
 .portfolio__link:hover {
     color: #4d4af3;
+}
+
+.modal__header {
+    border: none;
+}
+
+.modal__body {
+    border: none;
+}
+
+.modal__title {
+    border: none;
+}
+
+.modal__footer {
+    border: none;
 }
 

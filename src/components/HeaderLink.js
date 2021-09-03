@@ -2,9 +2,10 @@ import React from 'react';
 import '../componentcss/HeaderLink.css';
 import { Avatar } from "@material-ui/core";
 
+
 function HeaderLink({ avatar, Icon, title }) {
     return (
-        <div className="headerLink">
+        <div className="headerLink" title={title}>
             {/* If I pass in an icon, render icon */}
             { Icon &&  <Icon className='headerLink__icon' /> }
 
