@@ -13,6 +13,7 @@ import LiveTvIcon from '@material-ui/icons/LiveTv';
 import { signOut, getAuth } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { actionCreateUser } from '../redux/actions/user'
+import Logo from '../images/LI-In-Bug.png'
 import "../firebase";
 
 function Header() {
@@ -27,7 +28,7 @@ function Header() {
     return (
         <div className="header">
             <div className="header__left">
-                <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"   alt=""></img>
+                <img src={Logo}   alt=""></img>
                 <div className="header__search">
                     <SearchIcon />
                     <input type="text" placeholder="Search" onSubmit={() => {}} />
