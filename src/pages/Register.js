@@ -11,6 +11,7 @@ import "../firebase";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import '../componentcss/Register.css'
+import { Modal, Button } from 'react-bootstrap'
 
 
 const auth = getAuth();
@@ -26,6 +27,16 @@ function RegisterPage() {
     const [user, setUser] = useState({})
     const dispatch = useDispatch()
 
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => {
+        setShow(false);
+        redirect_Login()
+    }
+    
+        
+
+
 
     function redirect_Login() {
         var tID = setTimeout(function () {
@@ -35,13 +46,14 @@ function RegisterPage() {
         }, 1000);
     }
 
+
     async function handleRegister(e) {
         e.preventDefault();
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
-                console.log(userCredential.user.uid);
+
                 addDoc(collection(db, 'users'), {
                     id: userCredential.user.uid,
                     fname: fname,
@@ -60,16 +72,22 @@ function RegisterPage() {
                 })
 
                 dispatch(actionCreateUser(user))
+                handleShow()
 
             })
             .catch((error) => {
                 console.log(error);
             });
-        redirect_Login()
-        console.log("user", user)
+
+
+
+
+        
+
 
 
     }
+
 
 
     return (
@@ -77,7 +95,7 @@ function RegisterPage() {
             {/* LinkedIn Image Centered */}
             {/* Header */}
             <div className="register__header text-center">
-                <a href="/"><img className="header__img" src={Logo} alt=""></img></a>
+                <a href="/" ><img className="header__img" src={Logo} alt="" title="Sign In Page"></img></a>
             </div >
             <br />
             <div>
@@ -122,10 +140,22 @@ function RegisterPage() {
                                 </div>
                             </div>
                             <br />
-                            <label className="input__label text-center mb-3">By clicking Register, you agree to view my React LinkedIn clone and be decent in the posts section.</label>
+                            <label className="input__label text-center mb-3">By clicking Register, you agree to view my React LinkedIn clone. Please be nice in the post section.</label>
 
-                            <button className="btn register__button col-md-12 mb-3" type="submit" onClick={(e) => { handleRegister(e) }} >Register</button>
-                            <p className="input__label text-center">Already on LinkedIn? <a href="/login">Sign In</a></p>
+                            <button className="btn register__button col-md-12 mb-3" type="submit" onClick={(e) => { handleRegister(e) }} title="Register New User">Register</button>
+                            <Modal className="modal" size="md" show={show} onHide={handleClose}>
+                                <Modal.Header className="modal__header" closeButton>
+                                <Modal.Title className="text-center modal__title">Your account has been created successfully! </Modal.Title>
+                                </Modal.Header>
+                                
+                                <Modal.Body className="text-center modal__body">Welcome, {user.name} </Modal.Body>
+                                <Modal.Footer className="modal__footer">
+                                    <Button className="modal__button" variant="secondary" onClick={handleClose}>
+                                        Exit
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
+                            <p className="input__label text-center">Already on LinkedIn? <a href="/login" title="Sign In Page">Sign In</a></p>
                         </form>
                     </div>
                 </div>
@@ -136,7 +166,7 @@ function RegisterPage() {
 
             </div>
             <div className="footer">
-                <p className="footer__text">2021 &#169; LinkedIn-Clone <a className="portfolio__link" href="https://CHouston.dev">CHouston.dev</a></p>
+                <p className="footer__text">2021 &#169; LinkedIn-Clone <a className="portfolio__link" href="https://CHouston.dev" title="My Dev Portfolio">CHouston.dev</a></p>
             </div>
 
         </div>

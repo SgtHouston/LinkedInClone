@@ -53,7 +53,7 @@ function Sidebar(name, photoUrl) {
             <div className="sidebar">
                 <div className="widget__top">
                     <h5 className="widget__title">The Latest In Tech</h5>
-                    <a href="https://developer.nytimes.com/"><img src={NYT} className="widget__img" alt="New York Times Logo and Attributation"></img></a>
+                    <a href="https://developer.nytimes.com/" title="The New York Times Developer Network"><img src={NYT} className="widget__img" alt="New York Times Logo and Attributation"></img></a>
                 </div>
                 <div className="widget__bottom ">
                     <TechArticleList />

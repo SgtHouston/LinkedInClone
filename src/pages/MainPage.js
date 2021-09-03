@@ -25,7 +25,9 @@ function MainPage(props) {
                 {/* Sidebar */}
                 <Sidebar />
                 {/* Feed */}
+                
                 <Feed />
+                
                 {/* Widgets */}
                 <Widgets />
                 <div className="spacerdiv">

@@ -10,7 +10,7 @@ export default function Widgets() {
         <div className="widgets">
             <div className="widget__top">
                 <h5 className="widget__title">LinkedIn News</h5>
-                <a className="widget__img" href="https://developer.nytimes.com/"><img src={NYT} alt="New York Times Logo and Attribute"></img></a>
+                <a className="widget__img" href="https://developer.nytimes.com/" title="The New York Times Developer Network"><img src={NYT} alt="New York Times Logo and Attribute"></img></a>
             </div>
             <br/>
             <div className="widget__bottom">

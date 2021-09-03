@@ -16,9 +16,14 @@ import { actionCreateUser } from '../redux/actions/user'
 import "../firebase";
 
 function Header() {
+    
 
     const dispatch = useDispatch()
     const auth = getAuth();
+
+    function resetField () {
+        
+    }
     
 
     return (
@@ -27,11 +32,11 @@ function Header() {
                 <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg"   alt=""></img>
                 <div className="header__search">
                     <SearchIcon />
-                    <input type="text" placeholder="Search" />
+                    <input type="text" placeholder="Search" onSubmit={() => {}} />
                     
                 </div>
                 {/* sign out button */}
-                <button className="logout__button"
+                <button className="logout__button" title="Log Out User"
                         
                         onClick={() => {
                             signOut(auth)
