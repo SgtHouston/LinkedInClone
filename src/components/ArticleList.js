@@ -17,7 +17,7 @@ function ArticleList() {
     // Same as ComponentDidMount
     useEffect(() => {
 
-        fetch('http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_des/software.json?fields=all&api-key=ynxSgWAdQkHjVatrspBWvMI3e9WIrWrP')
+        fetch('https://api.nytimes.com/svc/semantic/v2/concept/name/nytd_des/software.json?fields=all&api-key=ynxSgWAdQkHjVatrspBWvMI3e9WIrWrP')
                 .then((res) => res.json())
                 .then((data) => {
                     // Store results in piece of state
