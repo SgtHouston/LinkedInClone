@@ -89,7 +89,7 @@ function Feed() {
             <div style={{ borderTop: "2px solid lightgray", marginLeft: 2, marginRight: 2 }}></div>
             <br />
             <div className="mainfeed">
-                {posts.reverse().map(({ name, jobdescription, message, photoUrl, time }, index) => (
+                {posts.map(({ name, jobdescription, message, photoUrl, time }, index) => (
 
                     <Post
                         key={index}
