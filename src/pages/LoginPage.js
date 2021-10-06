@@ -30,8 +30,6 @@ function LoginPage(props) {
         signInWithEmailAndPassword(auth, email, password);
 
         redirect_Main();
-
-
     }
 
 
