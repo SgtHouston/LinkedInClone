@@ -6,7 +6,8 @@ Solo Desktop Website Mockup w/ React
 
 ** In all the following images, my work is first, followed by the actual webpage on the right.**
 <br>
-** The LIVE VERSION of this project was taken down by Netlify due to copyright claim from LinkedIn.  I guess my copy was pretty good!😅 **
+
+** The LIVE VERSION of this project was taken down by Netlify due to copyright claim from LinkedIn. **
 
 ## Sign-In Page
 The Home "/" React route is the sign-in page, where the user is prompted to use their e-mail and password to sign in.
