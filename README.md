@@ -2,6 +2,8 @@
 
 Solo Desktop Website Mockup w/ React
 
+## LIVE WEBSITE TAKEN DOWN DUE TO COPYRIGHT CLAIM FROM LINKEDIN, I GUESS MY CLONE WAS PRETTY GOOD!😅🥲
+
 ** In all the following images, my work is first, followed by the actual webpage on the right.**
 <br>
 ** The LIVE VERSION of this project was taken down by Netlify due to copyright claim from LinkedIn.  I guess my copy was pretty good!😅 **
