@@ -40,7 +40,7 @@ On this main page, the technologies used for the project are in the 'Recent' sec
 <br>
 The right widget sidebar contains a New York Times API fetch that gathers the latest headlines in software and displays them using React Bootstrap in a similar fashion to the 'LinkedIn News' section, visible on the real page on the right-hand side of the screen.  Another API fetch  (not visible in screenshot) displays the latest 'Tech' articles down the left-hand sidebar.  These articles are also stored in state using Redux.  
 <br>
-Upon clicking 'Start a Post' at the top of the middle feed, a modal appears.  The user can type a message in th etext field of the modal which appears instatntly at the top of the feed.  Posts are stored as a database collection in Google Firebase Firestore Database.
+Upon clicking 'Start a Post' at the top of the middle feed, a modal appears.  The user can type a message in the text field of the modal which appears instantly at the top of the feed.  Posts are stored as a database collection in Google Firebase Firestore Database.
 <br>
 
 # Languages & Tech
