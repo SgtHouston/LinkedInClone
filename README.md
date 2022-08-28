@@ -2,7 +2,7 @@
 
 Solo Desktop Website Mockup w/ React
 
-## LIVE WEBSITE TAKEN DOWN DUE TO COPYRIGHT CLAIM FROM LINKEDIN, I GUESS MY CLONE WAS PRETTY GOOD!😅🥲
+## LIVE WEBSITE BACK UP!  Modified LinkedIn logos to avoid copyright { https://linkedinclone.app }
 
 ** In all the following images, my work is first, followed by the actual webpage on the right.**
 <br>
