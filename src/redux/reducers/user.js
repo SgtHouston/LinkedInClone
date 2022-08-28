@@ -1,8 +1,8 @@
-export function user (state = {
+export function user(state = {
     checked: false,
     user: null
 }, action) {
-    switch(action.type) {
+    switch (action.type) {
         case 'CREATE_USER':
             return {
                 user: action.object,
@@ -14,7 +14,7 @@ export function user (state = {
                 user: null,
                 checked: false
             }
-        
+
         default:
             return state
     }

@@ -6,12 +6,13 @@ import ImageIcon from '@material-ui/icons/Image';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import EventIcon from '@material-ui/icons/Event';
 import FormatIcon from '@material-ui/icons/FormatIndentIncrease';
-import { Avatar } from "@material-ui/core";
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Post from './Post';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { actionAddPost } from '../redux/actions/posts';
 import { Modal, Button, InputGroup, FormControl } from 'react-bootstrap'
+import { Avatar } from '@material-ui/core';
 
 
 
@@ -52,7 +53,7 @@ function Feed() {
         <div className="feed">
             <div className="feed__inputContainer">
                 <div className="feed__inputContainertop">
-                    <Avatar avatar={Avatar} />
+                    <Avatar />
                     <div className="spacerdivfeed"></div>
                     <div className="feed__input">
                         <form onClick={handleShow} title="Start a post">

@@ -1,6 +1,6 @@
 // This is the child component of ArticleList
 // It will receive issue data as a single prop called data
-// The Issue component should show at least:
+
 
 
 import React from 'react'
