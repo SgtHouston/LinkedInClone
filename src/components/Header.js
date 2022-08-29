@@ -58,11 +58,11 @@ function Header() {
                 <a href="/main"><HeaderLink Icon={HomeIcon} title="Home" /></a>
                 <HeaderLink Icon={SupervisorAccountIcon} title="My Network" />
                 <a href="https://Indubitably.app" ><HeaderLink Icon={BusinessCenterIcon} title="Jobs" /></a>
-                <HeaderLink Icon={SmsIcon} title="Messaging" />
+                <a href="https://smac-overflow.netlify.app" ><HeaderLink Icon={SmsIcon} title="Messaging" /></a>
                 <HeaderLink Icon={NotificationsIcon} title="Notifications" />
-                <HeaderLink avatar={AccountCircleIcon} title="Me" />
-                <HeaderLink Icon={AppsIcon} title="Work" />
-                <HeaderLink Icon={LiveTvIcon} title="Learning" />
+                <a href="https://chouston.dev" ><HeaderLink avatar={AccountCircleIcon} title="About The Dev" /></a>
+                <a href="https://Indubitably.app" ><HeaderLink Icon={AppsIcon} title="Work" /></a>
+                <a href="https://www.linkedin.com/learning/search?trk=homepage-basic_guest_nav_menu_learning"><HeaderLink Icon={LiveTvIcon} title="Learning" /></a>
             </div>
         </div>
     )
