@@ -32,10 +32,10 @@ function Post({name, jobdescription, message, photoUrl, time}) {
             </div>
             <div className="post__bottom">
                 <div className="post__buttons">
-                    <InputOption Icon={ThumbUpIcon} title="Like" color="gray" />
-                    <InputOption Icon={InsertCommentIcon} title="Comment" color="gray" />
-                    <InputOption Icon={ArrowForwardIcon} title="Share" color="gray"/>
-                    <InputOption Icon={SendIcon} title="Send" color="gray"/>
+                    <InputOption Icon={ThumbUpIcon} title="Like"  />
+                    <InputOption Icon={InsertCommentIcon} title="Comment" color='gray'  />
+                    <InputOption Icon={ArrowForwardIcon} title="Share" color='gray'/>
+                    <InputOption Icon={SendIcon} title="Send" color='gray' />
                 </div>
                 <div className="spacediv">
                     

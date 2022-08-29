@@ -20,6 +20,26 @@
 
 .inputicon {
     align-self: center;
+    color: gray;
+}
+
+.inputicon2 {
+    align-self: center;
+    color: #0f4e97
+}
+
+.inputicon2:active:hover {
+    width: 32px;
+    height: 32px;
+    transition: width 0.3s;
+    color: rgba(22, 92, 255, 0.733)
+}
+
+.inputicon:active:hover {
+    width: 32px;
+    height: 32px;
+    transition: width 0.3s;
+    color: rgba(22, 92, 255, 0.733)
 }
 
 
